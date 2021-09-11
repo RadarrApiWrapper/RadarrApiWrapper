@@ -1,0 +1,4 @@
+[submodule "Radarr"]
+	path = Radarr
+	url = https://github.com/Radarr/Radarr.git
+	branch = develop
