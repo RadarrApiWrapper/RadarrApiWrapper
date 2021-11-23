@@ -7,13 +7,13 @@ namespace RadarrApiWrapper.Services.Interfaces
     public interface IMovieService
     {
         /// <summary>
-        /// Get All Movies
+        /// Get all movies.
         /// </summary>
-        /// <returns>Returns all movies stored in the database</returns>
+        /// <returns>Returns all movies stored in the Radarr library</returns>
         Task<IList<Movie>> GetMovies();
-
+        
         /// <summary>
-        /// Get a Movie
+        /// Get a movie by id.
         /// </summary>
         /// <param name="id">Database Id of movie to return</param>
         /// <returns>Returns a single movie</returns>
