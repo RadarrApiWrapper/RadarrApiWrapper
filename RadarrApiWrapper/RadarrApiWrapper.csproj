@@ -2,25 +2,25 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+    <PackageTags>Radarr</PackageTags>
     <Description>C# Radarr API wrapper</Description>
     <PackageProjectUrl>https://github.com/RadarrApiWrapper/RadarrApiWrapper</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/RadarrApiWrapper/RadarrApiWrapper</RepositoryUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <Version>1.0.0.0</Version>
     <Authors>Teshvier Mathura</Authors>
     <Company>RadarrApiWrapper</Company>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\..\RadarrSharp\README.md">
+    <None Include="..\README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\..\RadarrSharp\LICENSE">
+    <None Include="..\LICENSE">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
