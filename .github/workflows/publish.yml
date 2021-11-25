@@ -51,6 +51,8 @@ jobs:
       with: 
         name: assets-for-download
         path: nuget-packages/RadarrApiWrapper.1.0.0.${{ github.run_number }}.nupkg
+    - name: Push to nuget.org
+      run: dotnet nuget push nuget-packages/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
     - name: Create tag
       uses: actions/github-script@v3
       with:
