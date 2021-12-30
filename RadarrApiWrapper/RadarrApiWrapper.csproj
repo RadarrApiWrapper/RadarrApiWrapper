@@ -34,8 +34,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Radarr\src\NzbDrone.Common\Radarr.Common.csproj" />
-    <ProjectReference Include="..\Radarr\src\NzbDrone.Core\Radarr.Core.csproj" />
+    <ProjectReference Include="..\Radarr\src\NzbDrone.Common\Radarr.Common.csproj" PrivateAssets="All" />
+    <ProjectReference Include="..\Radarr\src\NzbDrone.Core\Radarr.Core.csproj" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Pack="True" PackagePath="lib\net6.0" Include="bin\$(Configuration)\net6.0\Radarr.Common.dll" />
+    <Content Pack="True" PackagePath="lib\net6.0" Include="bin\$(Configuration)\net6.0\Radarr.Core.dll" />
   </ItemGroup>
 
 </Project>

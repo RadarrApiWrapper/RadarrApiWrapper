@@ -23,6 +23,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RadarrApiWrapper\RadarrApiWrapper.csproj" />
+    <ProjectReference Include="..\Radarr\src\NzbDrone.Common\Radarr.Common.csproj" />
+    <ProjectReference Include="..\Radarr\src\NzbDrone.Core\Radarr.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
