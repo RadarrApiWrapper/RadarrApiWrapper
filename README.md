@@ -15,8 +15,9 @@ These are some examples on how to use the API. All methods are async/awaitable. 
 
 Create the client:
 ```c#
-var restClient = new RestClient("http://127.0.0.1:7878")
+var restClient = new RestClient("http://127.0.0.1:7878");
 restClient.AddDefaultHeader("X-Api-Key", "apiKey");
+var radarrClient = new RadarrClient(restClient);
 ```
 
 Get all movies:
