@@ -4,7 +4,7 @@ using RestSharp;
 
 namespace RadarrApiWrapper
 {
-    public class RadarrClient
+    public class RadarrClient : IRadarrClient
     {
 
         /// <summary>
