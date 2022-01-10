@@ -9,11 +9,12 @@ namespace RadarrApiWrapper.IntegrationTests.Tests
     public class MovieServiceTest
     {
         private readonly CommonHelper _commonHelper;
+        private readonly ITestOutputHelper _outputHelper;
 
         public MovieServiceTest(ITestOutputHelper outputHelper, CommonHelper commonHelper)
         {
-            commonHelper.OutputHelper = outputHelper;
             _commonHelper = commonHelper;
+            _outputHelper = commonHelper.OutputHelper = outputHelper;
         }
 
         /// <summary>
@@ -29,7 +30,13 @@ namespace RadarrApiWrapper.IntegrationTests.Tests
             var movies = await radarrClient.Movie.GetMovies();
 
             // Assert
+            Assert.NotNull(movies);
             Assert.True(movies.Count > 1, "Expected movies count to be greater than 0.");
+
+            foreach (var movie in movies)
+            {
+                _outputHelper.WriteLine(movie.Title);
+            }
         }
 
         /// <summary>
@@ -45,7 +52,10 @@ namespace RadarrApiWrapper.IntegrationTests.Tests
             var movie = await radarrClient.Movie.GetMovie(1);
 
             // Assert
+            Assert.NotNull(movie);
             Assert.Equal(64686, movie.TmdbId);
+
+            _outputHelper.WriteLine(movie.Title);
         }
     }
 }

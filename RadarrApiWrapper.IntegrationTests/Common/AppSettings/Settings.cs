@@ -2,7 +2,7 @@
 {
     public class Settings
     {
-        public string ApiBaseUrl { get; set; }
-        public string ApiKey { get; set; }
+        public string RadarrApiBaseUrl { get; set; }
+        public string RadarrApiKey { get; set; }
     }
 }

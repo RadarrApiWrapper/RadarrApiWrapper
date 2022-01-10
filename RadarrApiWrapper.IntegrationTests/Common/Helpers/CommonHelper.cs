@@ -17,8 +17,8 @@ namespace RadarrApiWrapper.IntegrationTests.Common.Helpers
 
             Settings = new Settings();
             configuration.Bind(Settings);
-            RestClient = new RestClient(Settings.ApiBaseUrl);
-            RestClient.AddDefaultHeader("X-Api-Key", Settings.ApiKey);
+            RestClient = new RestClient(Settings.RadarrApiBaseUrl);
+            RestClient.AddDefaultHeader("X-Api-Key", Settings.RadarrApiKey);
         }
     }
 }
