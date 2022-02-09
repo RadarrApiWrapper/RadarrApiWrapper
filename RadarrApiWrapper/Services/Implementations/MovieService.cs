@@ -3,16 +3,14 @@ using NJsonSchema.Infrastructure;
 using NzbDrone.Core.MediaFiles.MediaInfo;
 using NzbDrone.Core.Movies;
 using RestSharp;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace RadarrApiWrapper.Services.Implementations
 {
     public class MovieService : Interfaces.IMovieService
     {
-        private readonly IRestClient _restSharpClient;
+        private readonly RestClient _restSharpClient;
 
-        public MovieService(IRestClient restSharpClient)
+        public MovieService(RestClient restSharpClient)
         {
             _restSharpClient = restSharpClient;
         }
@@ -21,10 +19,10 @@ namespace RadarrApiWrapper.Services.Implementations
         /// Get all movies.
         /// </summary>
         /// <returns>Returns all movies stored in the Radarr library</returns>
-        public async Task<IList<Movie>> GetMovies()
+        public async Task<IList<Movie>?> GetMovies()
         {
-            var request = new RestRequest("api/v3/movie", Method.GET);
-            var response = await _restSharpClient.ExecuteAsync(request);
+            var request = new RestRequest("api/v3/movie");
+            var response = await _restSharpClient.ExecuteGetAsync(request);
 
             #region JsonSerializerSettings
             // This is added because MediaInfoModel.RunTime was not being returned correctly from Radarr. So the property will just be ignored in this instance
@@ -46,10 +44,10 @@ namespace RadarrApiWrapper.Services.Implementations
         /// </summary>
         /// <param name="id">Database Id of movie to return</param>
         /// <returns>Returns a single movie</returns>
-        public async Task<Movie> GetMovie(int id)
+        public async Task<Movie?> GetMovie(int id)
         {
-            var request = new RestRequest($"api/v3/movie/{id}", Method.GET);
-            var response = await _restSharpClient.ExecuteAsync(request);
+            var request = new RestRequest($"api/v3/movie/{id}");
+            var response = await _restSharpClient.ExecuteGetAsync(request);
             return JsonConvert.DeserializeObject<Movie>(response.Content);
         }
     }

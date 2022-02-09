@@ -31,8 +31,8 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="NJsonSchema" Version="10.5.2" />
-    <PackageReference Include="RestSharp" Version="106.13.0" />
+    <PackageReference Include="NJsonSchema" Version="10.6.7" />
+    <PackageReference Include="RestSharp" Version="107.2.1" />
   </ItemGroup>
 
   <ItemGroup>

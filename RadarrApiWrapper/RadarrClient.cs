@@ -12,7 +12,7 @@ namespace RadarrApiWrapper
         /// </summary>
         public IMovieService Movie { get; }
 
-        public RadarrClient(IRestClient restSharpClient)
+        public RadarrClient(RestClient restSharpClient)
         {
             Movie = new MovieService(restSharpClient);
         }

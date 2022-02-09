@@ -14,7 +14,7 @@ namespace RadarrApiWrapper.IntegrationTests.Tests
         public MovieServiceTest(ITestOutputHelper outputHelper, CommonHelper commonHelper)
         {
             _commonHelper = commonHelper;
-            _outputHelper = commonHelper.OutputHelper = outputHelper;
+            _outputHelper = outputHelper;
         }
 
         /// <summary>

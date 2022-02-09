@@ -1,13 +1,11 @@
 ﻿using Microsoft.Extensions.Configuration;
 using RadarrApiWrapper.IntegrationTests.Common.AppSettings;
 using RestSharp;
-using Xunit.Abstractions;
 
 namespace RadarrApiWrapper.IntegrationTests.Common.Helpers
 {
     public class CommonHelper
     {
-        public ITestOutputHelper OutputHelper { get; set; }
         public Settings Settings { get; }
         public RestClient RestClient { get; }
 
